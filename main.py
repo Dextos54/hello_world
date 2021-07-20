@@ -1,6 +1,7 @@
 import os
 import shutil
 from pathlib import Path
+import platform
 
 
 def get_our_precious_time(file_path):
@@ -8,7 +9,10 @@ def get_our_precious_time(file_path):
     return info
 
 
-Reverse_Solidus = "\ "
+if platform.system() == 'Linux':
+    Reverse_Solidus = "/ "
+else:
+    Reverse_Solidus = "\ "
 
 print("Pls write directories paths")
 tree1 = input()
